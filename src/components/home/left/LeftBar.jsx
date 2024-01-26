@@ -1,5 +1,7 @@
 import Contacts from "./contacts/Contacts";
-export default function LeftBar() {
+import PropTypes from 'prop-types';
+export default function LeftBar({ setCurrentContract }) {
+
     return (
         <>
 
@@ -33,11 +35,14 @@ export default function LeftBar() {
 
                     {/* <!-- Contacts --> */}
                     <div className="bg-grey-lighter flex-1 overflow-auto ">
-                        <Contacts />
+                        <Contacts setCurrentContract ={setCurrentContract }/>
                     </div>
                 </div>
 
             </div>
         </>
     )
+}
+LeftBar.propTypes = {
+    setCurrentContract: PropTypes.func
 }

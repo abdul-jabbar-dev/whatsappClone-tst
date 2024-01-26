@@ -1,7 +1,10 @@
+import allInbox from "../../../data/inbox";
 import MassageBox from "./MassageBox";
+import PropTypes from 'prop-types';
 
+export default function RigthBar({ currentContact }) {
+    const inbox = allInbox.filter(cht => cht.chatId === currentContact)
  
-export default function RigthBar() {
     return (
         <>
             <div className="w-9/12 border flex flex-col">
@@ -17,7 +20,7 @@ export default function RigthBar() {
                                 Expendables
                             </p>
                             <p className="text-gray-500 text-xs mb-1">
-                              last seen 5 min
+                                last seen 5 min
                             </p>
                         </div>
                     </div>
@@ -36,7 +39,7 @@ export default function RigthBar() {
                 </div>
 
                 {/* <!-- Messages --> */}
-               <MassageBox/>
+                <MassageBox inbox={inbox} />
 
                 {/* <!-- Input --> */}
                 <div className="bg-grey-lighter px-4 py-4 flex items-center">
@@ -54,4 +57,7 @@ export default function RigthBar() {
 
         </>
     )
+}
+RigthBar.propTypes = {
+    currentContact: PropTypes.string
 }

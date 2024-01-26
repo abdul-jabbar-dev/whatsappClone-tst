@@ -1,10 +1,11 @@
+ 
 import contactList from "../../../../data/contacts";
-
-export default function Contacts() {
+import PropTypes from 'prop-types';
+export default function Contacts({ setCurrentContract } ) {
     return (
         <>
             {contactList.map((d, i) =>
-                <div key={i}  className="bg-white hover:bg-gray-100 px-3 flex items-center cursor-pointer">
+                <div key={i} onClick={() => setCurrentContract(d.id)} className="bg-white hover:bg-gray-100 px-3 flex items-center cursor-pointer">
                     <div>
                         <img className="h-12 w-12 rounded-full"
                             src={d.img} />
@@ -25,4 +26,7 @@ export default function Contacts() {
                 </div>)}
         </>
     )
+}
+Contacts.propTypes = {
+    setCurrentContract: PropTypes.func
 }
