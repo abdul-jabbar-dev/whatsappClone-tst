@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 
 export default function UserChat({ chat }) {  
+    // console.log(new Date(chat.deliveredAt).toTimeString('A'))
     return (
         <div className="flex overflow-y w-full justify-start mb-[2px]">
             <div className="rounded-md px-3 py-1 max-w-full bg-white shadow-md" >

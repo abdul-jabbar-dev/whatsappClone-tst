@@ -1,10 +1,16 @@
-
+ 
+import AuthContextHook from './context/auth/AuthContextHook';
 import Home from './page/Home';
-function App() {
+import Login from './page/Login'; 
+function App() { 
 
+
+  const {user} = AuthContextHook()
+  console.log(user)
   return (
     <>
-      <Home/>
+      {Object.keys(user).length > 0 ? <Home user={user} /> :
+        <Login />}
     </>
   )
 }

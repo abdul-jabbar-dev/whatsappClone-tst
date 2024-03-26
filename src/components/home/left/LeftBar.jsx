@@ -1,10 +1,10 @@
 import Contacts from "./contacts/Contacts";
 import PropTypes from 'prop-types';
-export default function LeftBar({ setCurrentContract }) {
+export default function LeftBar({ setCurrentUser }) {
+ 
 
     return (
         <>
-
             {/* <!-- Left --> */}
             <div className="w-3/12 border flex flex-col h-full ">
 
@@ -35,7 +35,7 @@ export default function LeftBar({ setCurrentContract }) {
 
                     {/* <!-- Contacts --> */}
                     <div className="bg-grey-lighter flex-1 overflow-auto ">
-                        <Contacts setCurrentContract ={setCurrentContract }/>
+                        <Contacts setCurrentUser={setCurrentUser} />
                     </div>
                 </div>
 
@@ -44,5 +44,5 @@ export default function LeftBar({ setCurrentContract }) {
     )
 }
 LeftBar.propTypes = {
-    setCurrentContract: PropTypes.func
+    setCurrentUser: PropTypes.func,
 }

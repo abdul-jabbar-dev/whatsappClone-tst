@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 
 import { useState } from "react";
 import LeftBar from "../components/home/left/LeftBar";
 import RigthBar from "../components/home/right/RigthBar";
 
-export default function Home() {
-    const [currentContact, setCurrentContract] = useState("")
- 
+export default function Home() { 
+    const [currentUser, setCurrentUser] = useState({})
+
     return (
         <div>
             <div>
@@ -15,9 +17,9 @@ export default function Home() {
                     <div className="py-6 h-screen  ">
                         <div className="flex h-full" style={{ backgroundColor: "#f0f2f5" }}>
 
-                            <LeftBar setCurrentContract={setCurrentContract}/>
+                            <LeftBar setCurrentUser={setCurrentUser} />
                             {/* <!-- Right --> */}
-                            <RigthBar currentContact={currentContact} />
+                            <RigthBar currentUser={currentUser} />
 
                         </div>
                     </div>

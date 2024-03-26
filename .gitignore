@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+whatsapp_backend
+whatsapp_backend - Copy
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
